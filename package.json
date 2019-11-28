@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-react-flow",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Eslint flow type specific rules for React project",
   "keywords": [
     "eslint",
@@ -24,5 +24,18 @@
   "engines": {
     "node": ">=8.11.3"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kiwka/eslint-plugin-react-flow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kiwka/eslint-plugin-react-flow/issues"
+  },
+  "homepage": "https://github.com/Kiwka/eslint-plugin-react-flow#readme"
 }
