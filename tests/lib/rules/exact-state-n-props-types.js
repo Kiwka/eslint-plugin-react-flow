@@ -9,29 +9,29 @@
 //------------------------------------------------------------------------------
 
 var rule = require("../../../lib/rules/exact-state-n-props-types"),
-
-    RuleTester = require("eslint").RuleTester;
-
+  RuleTester = require("eslint").RuleTester;
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
+const parser = require.resolve("babel-eslint");
 ruleTester.run("exact-state-n-props-types", rule, {
+  valid: [
+    // give me some code that won't trigger a warning
+  ],
 
-    valid: [
-
-        // give me some code that won't trigger a warning
-    ],
-
-    invalid: [
+  invalid: [
+    {
+      parser,
+      code: `type Props = $Exact<{}>; class NewComponent extends React.Component<Props, {}> {}`,
+      errors: [
         {
-            code: "",
-            errors: [{
-                message: "Fill me in.",
-                type: "Me too"
-            }]
+          message:
+            "Annotation for React component state and props should have exact type"
         }
-    ]
+      ]
+    }
+  ]
 });
